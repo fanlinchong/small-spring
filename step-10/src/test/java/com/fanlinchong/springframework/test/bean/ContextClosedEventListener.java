@@ -8,6 +8,6 @@ import java.time.LocalDateTime;
 public class ContextClosedEventListener implements ApplicationListener<ContextClosedEvent> {
 	@Override
 	public void onApplicationEvent(ContextClosedEvent event) {
-		System.out.printf("【事件类型】：%s消息；【时间】：%s\n", event.getClass().getSimpleName(), LocalDateTime.now());
+		System.out.printf("【事件类型】：%s；【时间】：%s\n", event.getClass().getSimpleName(), LocalDateTime.now());
 	}
 }
