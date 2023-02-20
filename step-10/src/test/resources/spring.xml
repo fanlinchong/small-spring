@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<beans>
+    <bean id="contextRefreshedEventListener"
+          class="com.fanlinchong.springframework.test.bean.ContextRefreshedEventListener"/>
+    <bean id="customEventListener" class="com.fanlinchong.springframework.test.bean.CustomEventListener"/>
+    <bean id="contextClosedEventListener" class="com.fanlinchong.springframework.test.bean.ContextClosedEventListener"/>
+</beans>
