@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<beans>
+    <bean id="userDao" class="com.fanlinchong.springframework.test.bean.UserDao" init-method="initData"
+          destroy-method="destroyData"/>
+    <bean id="userService" class="com.fanlinchong.springframework.test.bean.UserService">
+        <property name="company" value="Microsoft"/>
+        <property name="location" value="Seattle"/>
+        <property name="userDao" ref="userDao"/>
+    </bean>
+</beans>
