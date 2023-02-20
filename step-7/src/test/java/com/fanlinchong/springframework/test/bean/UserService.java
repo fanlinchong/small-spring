@@ -1,6 +1,9 @@
 package com.fanlinchong.springframework.test.bean;
 
-public class UserService {
+import com.fanlinchong.springframework.beans.factory.DisposableBean;
+import com.fanlinchong.springframework.beans.factory.InitializingBean;
+
+public class UserService implements InitializingBean, DisposableBean {
 	private String userId;
 
 	private String company;
@@ -57,5 +60,15 @@ public class UserService {
 				", location='" + location + '\'' +
 				", userDao=" + userDao +
 				'}';
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("execute method named 'destroy'");
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("execute method named 'afterPropertiesSet'");
 	}
 }
