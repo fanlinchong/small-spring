@@ -37,7 +37,7 @@ public class ResourceLoaderTest {
 
 	@Test
 	public void test_LoadFromUrl() throws IOException {
-		Resource resource = resourceLoader.getResource("https://github.com/fanlinchong/small-spring/blob/main/important.properties");
+		Resource resource = resourceLoader.getResource("https://raw.githubusercontent.com/fanlinchong/small-spring/main/important.properties");
 		InputStream inputStream = resource.getInputStream();
 		String content = IoUtil.readUtf8(inputStream);
 
