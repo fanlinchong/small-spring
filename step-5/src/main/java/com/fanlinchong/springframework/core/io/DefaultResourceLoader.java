@@ -8,7 +8,7 @@ import java.net.URL;
 public class DefaultResourceLoader implements ResourceLoader {
 	@Override
 	public Resource getResource(String location) {
-		Assert.notNull(location, "Location must not be null");
+		Assert.notNull(location, "location must not be null");
 		if (location.startsWith(CLASSPATH_PREFIX)) {
 			return new ClassPathResource(location.substring(CLASSPATH_PREFIX.length()));
 		}
