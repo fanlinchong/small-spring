@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<beans>
+    <bean id="beforeAdvice" class="com.fanlinchong.springframework.test.bean.UserServiceBeforeAdvice"/>
+    <bean class="com.fanlinchong.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+    <bean id="methodInterceptor"
+          class="com.fanlinchong.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor">
+        <property name="advice" ref="beforeAdvice"/>
+    </bean>
+    <bean id="pointcutAdvisor" class="com.fanlinchong.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+        <property name="expression"
+                  value="execution(* com.fanlinchong.springframework.test.bean.IUserService.count(..))"/>
+        <property name="advice" ref="methodInterceptor"/>
+    </bean>
+
+    <bean id="userService" class="com.fanlinchong.springframework.test.bean.UserService"/>
+</beans>
